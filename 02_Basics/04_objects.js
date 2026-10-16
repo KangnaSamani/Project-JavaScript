@@ -60,3 +60,35 @@ console.log(Object.values(tinderUser));//[ '123abc', 'kangna', false ]
 console.log(Object.entries(tinderUser));//[ [ 'id', '123abc' ], [ 'name', 'kangna' ], [ 'isLoggedIn', false ] ]
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn'));//true
+
+const course = {
+    coursename : "javascript",
+    price : "999",
+    courseInstructor: "kangna"
+}
+
+// course.courseInstructor
+
+const {courseInstructor} = course
+console.log(courseInstructor);//kangna
+
+//if the property name is big then we can destructure it and access it
+const {courseInstructor: instructor} = course
+console.log(instructor);//kangna
+
+// const navbar = ({company}) => {
+
+// }
+// navbar(company="kangna")
+
+// {
+//     "name": "kangna",
+//     "coursename": "javascript",
+//     "price": "free"
+// }
+
+[
+    {},
+    {},
+    {}
+]
