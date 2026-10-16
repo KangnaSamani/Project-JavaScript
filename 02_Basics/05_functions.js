@@ -66,7 +66,7 @@ console.log(loginUserMessage("kangna"))//kangna just logged in //execute and als
 console.log(loginUserMessage(""))// just logged in
 console.log(loginUserMessage())//undefined just logged in
 
-function calculateCartPrice(...num1){//... is known as rest and sprad operator
+function calculateCartPrice(...num1){//... is known as rest and spread operator
     return num1
 }
 
