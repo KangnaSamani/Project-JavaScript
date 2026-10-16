@@ -65,3 +65,34 @@ loginUserMessage("kangna")//execution //no output only executes
 console.log(loginUserMessage("kangna"))//kangna just logged in //execute and also print
 console.log(loginUserMessage(""))// just logged in
 console.log(loginUserMessage())//undefined just logged in
+
+function calculateCartPrice(...num1){//... is known as rest and sprad operator
+    return num1
+}
+
+console.log(calculateCartPrice(200, 400, 500));//[ 200, 400, 500 ] //output without ... is 200
+
+const user = {
+    username: "kangna",
+    price: 199
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+
+// handleObject(user)//Username is kangna and price is 199
+
+handleObject({
+    username: "kangnasamnai",
+    price: 399
+})//Username is kangnasamnai and price is 399
+
+const myNewArray = [200, 400, 100, 600]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+console.log(returnSecondValue(myNewArray));//400
+console.log(returnSecondValue([200, 400, 500, 100]));//400
