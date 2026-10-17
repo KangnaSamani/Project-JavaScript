@@ -46,16 +46,16 @@ if(true){
 
 // --------------------------Interesting--------------------------------
 
-// addone(5)//we can also write like this
-console.log(addone(5))
+// addone(5)//we can also write like this.here we can access it bcz function is only declared not assigned to any variable
+console.log(addone(5))//6
 
-function addone(num){
+function addone(num){//here we have only declared the function
     return num + 1
 }
 
-// addone(5)
+// addone(5)//we cannot access it before declaration if the function is declared and hold it in a variable
 
-const addTwo = function(num){
+const addTwo = function(num){//here we have declared the function and hold it in a variable
     return num + 2
 }
 
