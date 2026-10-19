@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Evets</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <ul id="image">
+        <li><img width="200px" height="130px" id="flower" src="https://images.pexels.com/photos/39514310/pexels-photo-39514310.jpeg" alt=""></li>
+        <li><img width="200px" height="130px" id="mountain" src="https://images.pexels.com/photos/33603099/pexels-photo-33603099.jpeg" alt=""></li>
+        <li><img width="200px" height="130px" id="sunset" src="https://images.pexels.com/photos/33926926/pexels-photo-33926926.jpeg" alt=""></li>
+         <li><img width="200px" height="130px" id="beach" src="https://images.pexels.com/photos/38678862/pexels-photo-38678862.jpeg" alt="" onclick="alert('beach')"></li>
+        <li><img width="200px" height="130px" id="butterfly" src="https://images.pexels.com/photos/18536541/pexels-photo-18536541.png" alt=""></li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+    document.getElementById('flower').onclick = function(){
+        alert("flower clicked")
+    }
+    document.getElementById('mountain').addEventListener('click',function(e){
+        alert("mountain clicked")
+        console.log(e);
+    }, false)
+
+    //attachEvent()
+    //jQuery - on 
+
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+
+    //event propagation
+    // event public, event capture
+
+    document.getElementById('image').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    }, false)//default is false so you can remove it
+    document.getElementById('flower').addEventListener('click', function(e){
+        console.log("flower clicked");
+        e.stopPropagation()//to stop bubble event
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation()
+        console.log("google clicked");
+    }, false)
+
+    document.querySelector('#image').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt=e.target.parentNode
+            removeIt.remove()
+            // removeIt.parentNode.removeChild(removeIt)
+        }
+    })
+</script>
+</html>
